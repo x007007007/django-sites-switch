@@ -4,7 +4,7 @@ let site object automatically switch by http request
 
 
 ## install
-    pip install git+ssh://git@github.com/x007007007/django-sites-switch.git
+git+ssh://git@github.com/x007007007/django-sites-switch.git#egg=django-sites-switch
 
 ## usage
 
