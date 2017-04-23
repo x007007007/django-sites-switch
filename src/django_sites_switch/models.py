@@ -28,10 +28,12 @@ class SiteManager(_SiteManager):
             except _Site.DoesNotExist:
                 pass
         raise ImproperlyConfigured(
-            "You're using the Django \"sites framework\" without having "
+            "You're using the Django \"sites framework\" Monkey Patched "
+            "`django-sites-switch` without having "
             "set the SITE_ID setting. Create a site in your database and "
             "set the SITE_ID setting or pass a request to "
-            "Site.objects.get_current() to fix this error."
+            "Site.objects.get_current() "
+            "or set middleware to fix this error."
         )
 
 

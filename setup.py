@@ -8,7 +8,7 @@ import versioneer
 
 def read(*parts):
     filename = os.path.join(os.path.dirname(__file__), *parts)
-    with open(filename, encoding='utf-8') as fp:
+    with open(filename) as fp:
         return fp.read()
 
 setup(
