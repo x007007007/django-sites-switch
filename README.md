@@ -25,9 +25,16 @@ add middleware at tail of `MIDDLEWARE` in django setting ,like
 MIDDLEWARE = [
 
        # ...
-    'django_sites_switch.middleware.RecordRequestMiddleware',
+    'django_sites_switch.middleware.RecordAndRidRequestMiddleware',
 ]
 ```
+or like
+MIDDLEWARE = [
 
+       # ...
+    'django_sites_switch.middleware.RidRecordRequestMiddleware',
+       # ...
+    'django_sites_switch.middleware.RecordRequestMiddleware'
+]
 if http request do not in your sites database,
 while use setting.SITE_ID as default site, make sure you have config

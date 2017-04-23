@@ -5,24 +5,22 @@ except ImportError:
         pass
 import logging
 import threading
-import weakref
 
 
 logger = logging.getLogger(__name__)
-_requests = weakref.WeakKeyDictionary()
+_thread_local = threading.local()
 
 
 class RecordRequestMiddleware(MiddlewareMixin):
     def process_request(self, request):
-        request_id = id(request)
-        logger.debug("process_request: arg {}".format(request_id))
-        _requests[threading.currentThread()] = (request,)
+        logger.debug("process_request: arg {}".format(id(request)))
+        _thread_local._request = request
 
 
 class RidRecordRequestMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
         logger.debug("process_response: arg {}".format(id(request)))
-        del _requests[threading.currentThread()]
+        del _thread_local._request
         return response
 
 
@@ -31,6 +29,4 @@ class RecordAndRidRequestMiddleware(RecordRequestMiddleware, RidRecordRequestMid
 
 
 def get_request():
-    if _requests and threading.currentThread() in _requests:
-        return _requests[threading.currentThread()][0]
-    return None
+    return getattr(_thread_local, "_request", None)
