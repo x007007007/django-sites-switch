@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django_sites_switch_test_ins import views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^test/get_request/no_req/$', views.havent_request),
+    url(r'^test/get_request/req/$', views.have_request),
+    url(r'^test/get_request/shortcut/$', views.shortcut),
 ]

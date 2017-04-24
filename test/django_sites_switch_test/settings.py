@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'django_sites_switch',
+    'django_sites_switch_test_ins',
 ]
 
 MIDDLEWARE = [
