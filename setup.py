@@ -15,7 +15,7 @@ setup(
     name='django-sites-switch',
     version=versioneer.get_version(),
     description='let django.contrib.sites object automatically switch by http request',
-    long_description=read('README.md'),
+    long_description=read('README.rst'),
     keywords=['django', 'sites', 'request'],
     author='Xingci Xu',
     author_email='x007007007@hotmail.com',
