@@ -1,4 +1,7 @@
 # django-sites-switch
+[![Build Status](https://travis-ci.org/x007007007/django-sites-switch.svg?branch=master)](https://travis-ci.org/x007007007/django-sites-switch)
+
+
 monkey patch django.contrib.site,
 let site object automatically switch by http request
 
@@ -38,3 +41,6 @@ MIDDLEWARE = [
 ]
 if http request do not in your sites database,
 while use setting.SITE_ID as default site, make sure you have config
+
+
+
