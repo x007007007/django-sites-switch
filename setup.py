@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import, unicode_literals, division
 import os
 from setuptools import setup, find_packages
 import versioneer
@@ -20,15 +20,12 @@ setup(
     author='Xingci Xu',
     author_email='x007007007@hotmail.com',
     package_dir={
-        "": "src"
+        "": str("src")
     },
     url="https://github.com/x007007007/django-sites-switch",
     download_url="https://github.com/x007007007/django-sites-switch/archive/master.zip",
     license='MIT',
     packages=find_packages("src"),
-    package_data={
-        '': [],
-    },
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
