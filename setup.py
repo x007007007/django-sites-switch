@@ -22,6 +22,8 @@ setup(
     package_dir={
         "": "src"
     },
+    url="https://github.com/x007007007/django-sites-switch",
+    download_url="https://github.com/x007007007/django-sites-switch/archive/master.zip",
     license='MIT',
     packages=find_packages("src"),
     package_data={
